@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peddy-Pet Adoption Platform</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/64f0e8001e.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="lato">
+    <header>
+        <!-- navigation bar -->
+        <nav class="container mx-auto py-3 flex justify-between items-center">
+            <div class="flex w-[100px] gap-2">
+                <img src="images/logo.webp" alt="">
+                <h2 class="text-xl">Peddy</h2>
+            </div>
+            <div class="">
+                <ul class="flex gap-4">
+                    <li>Home</li>
+                    <li>Shop</li>
+                    <li>Contact</li>
+                </ul>
+            </div>
+            <div class="rounded-full p-5 border border-gray-400 w-1 h-1 flex items-center justify-center">
+                <i class="fa-regular fa-user"></i>
+            </div>
+        </nav>
+        <!-- banner -->
+        <section class="container mx-auto my-5 text-center">
+            <div class="space-y-5">
+                <h5 class="text-xl font-bold text-gray-400">Bringing families together</h5>
+                <h1 class="font-extrabold text-7xl">Your Path to Adaption <br>Starts Here</h1>
+                <p class="text-lg">Adopting a pet means opening your heart and home to a loyal companion.It creates a
+                    bond that brings joy, <br> love, and responsibility into your life.</p>
+                <button class="btn text-xl font-bold text-white bg-purple-600"><a href="#main-content">View More</a></button>
+                <div class="flex justify-center items-center">
+                    <img src="images/pet.webp" alt="">
+                </div>
+            </div>
+        </section>
+    </header>
+    <main id="main-content" class="container mx-auto">
+        <div class="text-center space-y-4">
+            <h1 class="text-4xl font-extrabold">Adopt Your Best Friend</h1>
+            <p class="text-lg">Adopting a pet means opening your heart and home to a loyal companion.It creates a bond
+                that brings joy, <br> love, and responsibility into your life.</p>
+        </div>
+        <div id="category-container" class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-6 mt-4"></div>
+       
+    </main>
+    <footer>
+
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
