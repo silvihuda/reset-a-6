@@ -1,3 +1,7 @@
 .lato{
     font-family: "Lato", serif;
 }
+.active{
+    background-color: brown;
+    color: white;
+}
