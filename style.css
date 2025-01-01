@@ -1,7 +1,8 @@
 .lato{
     font-family: "Lato", serif;
 }
-.active{
-    background-color: brown;
-    color: white;
+.bg{
+    border-radius: 120px;
+    border: 1.5px solid rgb(14, 122, 129);
+    background-color: rgb(146, 96, 113);
 }

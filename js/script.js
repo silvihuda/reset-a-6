@@ -1,3 +1,10 @@
+const changeBgColor = () => {
+    const buttons = document.getElementsByClassName('category-btn');
+    for(const btn of buttons){
+     btn.classList.remove('bg');
+     }
+ }
+
 const loadCategories = () => {
     fetch('https://openapi.programming-hero.com/api/peddy/categories')
         .then(res => res.json())
@@ -13,7 +20,12 @@ const loadAllPets = () => {
 const loadPetsByCategories = (categoryName)=>{
     fetch(`https://openapi.programming-hero.com/api/peddy/category/${categoryName}`)
      .then(res => res.json())
-     .then(data=>displayAllPets(data.data))
+     .then(data=>{
+        changeBgColor();
+        const activeButton = document.getElementById(`btn-('${categoryName}')`);
+        activeButton.classList.add('bg')
+        displayAllPets(data.data)
+     })
      .catch(err=>console.log(err))
 }
 const displayCategories = (categories) => {
@@ -22,7 +34,7 @@ const displayCategories = (categories) => {
         console.log(item);
         const buttonContainer = document.createElement('div');
         buttonContainer.innerHTML = `
-        <button onclick="loadPetsByCategories('${item.category}')" class="btn flex justify-center items-center gap-2 lg:px-20 px-6 text-black bg-white border border-slate-400">
+        <button id="btn-('${item.category}')" onclick="loadPetsByCategories('${item.category}')" class="btn category-btn flex justify-center items-center gap-2 lg:px-20 px-6 text-black border border-slate-400">
           <div class="h-[30px]">
           <img class="h-full w-full object-cover" src="${item.category_icon}"/>
           </div>
@@ -35,7 +47,20 @@ const displayCategories = (categories) => {
 const displayAllPets = (pets) => {
     const cardContainer = document.getElementById('card-container');
     cardContainer.innerHTML = ""
-    
+    if(pets.length==0){
+        cardContainer.classList.remove('grid');
+        cardContainer.innerHTML =`
+          <div class="min-h-[300px] w-full flex flex-col gap-2 justify-center items-center">
+          <img src="images/error.webp"/>
+          <h2 class="text-center text-xl font-bold">No Information Available</h2>
+          <p class="text-lg">Adopting a pet means opening your heart and home to a loyal companion.It creates a bond that brings joy, <br> love, and responsibility into your life.</p>
+          </div>
+        `;
+        return;
+    }
+    else{
+        cardContainer.classList.add('grid');
+    }
     pets.forEach((pet) => {
         console.log(pet);
         const card = document.createElement('div');
