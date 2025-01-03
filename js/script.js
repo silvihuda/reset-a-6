@@ -86,6 +86,16 @@ const displayDetails = (petData) =>{
    `
    document.getElementById('customModal').showModal();
 }
+const showLikedImages = (image) => {
+    const imageContainer = document.getElementById('liked-images');
+    const div = document.createElement('div');
+    div.innerHTML = `
+        <div class="h-[100px]">
+           <img class="h-full w-full rounded-lg mt-1" src="${image}"/>
+        </div>
+    `
+    imageContainer.append(div);
+}
 const displayAllPets = (pets) => {
     const cardContainer = document.getElementById('card-container');
     cardContainer.innerHTML = ""
@@ -134,7 +144,7 @@ const displayAllPets = (pets) => {
     <hr>
     <div class="mt-3 flex justify-between gap-1">
      
-      <button class="btn btn-sm text-xl font-bold bg-white border border-[#0E7A8126] rounded-lg text-[#0E7A81]"><i class="fa-regular fa-thumbs-up"></i></button>
+      <button onclick="showLikedImages('${pet.image}')" class="btn btn-sm text-xl font-bold bg-white border border-[#0E7A8126] rounded-lg text-[#0E7A81]"><i class="fa-regular fa-thumbs-up"></i></button>
       <button class="btn btn-sm text-xl font-bold bg-white border border-[#0E7A8126] text-[#0E7A81] rounded-lg">Adopt</button>
       <button onclick="loadDetails(${pet.petId})" class="btn btn-sm text-xl font-bold bg-white border border-[#0E7A8126] text-[#0E7A81] rounded-lg">Details</button>
       

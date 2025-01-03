@@ -63,13 +63,13 @@
             <button class="btn lg:text-xl font-bold text-white bg-purple-600 px-10">Sort by Price</button>
         </div>
         <!-- pets section -->
-         <div class="grid lg:grid-cols-4 md:grid-cols-3">
+         <div class="grid lg:grid-cols-4 md:grid-cols-3 gap-5">
             <!-- pets with details -->
              <div id="card-container" class="grid md:col-span-2 lg:col-span-3 grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-5">
 
              </div>
              <!-- pets by pressing like button -->
-              <div>
+              <div id="liked-images" class="grid grid-cols-2 grid-rows-11  border rounded-lg p-2 gap-2">
 
               </div>
          </div>
@@ -88,9 +88,39 @@
             </div>
           </dialog>
     </main>
-    <footer>
+    <footer class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 bg-black text-white mt-8 p-8">
+        <nav>
+            <div class="flex mb-2 w-[100px] gap-2">
+                <img src="images/logo.webp" alt="">
+                <h2 class="text-xl">Peddy</h2>
+            </div>
+            <p>Location: av. Washington 165,NY CA</p>
+            <span>54003</span>
+            <p>Phone:+31 85 964 47 25</p>
+            <p>Email:info@yourdomain.com</p>
+            <p>Opening Hours:9:00 AM- 5:00 PM</p>
+            <div>
 
-    </footer>
+            </div>
+        </nav>
+        <nav class="grid grid-cols-1">
+          <h6 class="footer-title">Useful Links</h6>
+          <a class="">Home</a>
+          <a class="">About us</a>
+          <a class="">Animals</a>
+          <a class="">Foundation</a>
+          <a class="">Contact</a>
+        </nav>
+        <form class="md:flex md:flex-col md:justify-center md:items-center ">
+          <h6 class="footer-title">Drop A Message</h6>
+          <fieldset class="">
+            <label class="label">
+                <input type="text" placeholder="Enter your email" class="input input-bordered bg-[#FFFFFF0D] lg:w-full" />
+            </label>
+            <input type="button" class="mt-2 input input-bordered bg-[#0E7A81] lg:w-full w-[220px]" value="Subscribe">
+          </fieldset>
+        </form>
+      </footer>
     <script src="js/script.js"></script>
 </body>
 
